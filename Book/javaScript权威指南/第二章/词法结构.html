@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>词法结构</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function() {
+            /* JavaScript并不是在所有换行处都填补分号，只有在缺少了分号就无法正常解析代码的时候，JavaScript才会填补分号，
+               换句话讲，如果当前语句和随后的非空格字符不能当成一个整体来解析的话，JavaScript就在当前语句行结束处填补分号 */
+            var a = 1
+
+            var b = 2
+
+            var c = 3; var b = 4;
+
+            (function test1 () {
+                d
+                =
+                5
+                console.log(d)            // 相当于 var d; d = 5; console.log(d);
+
+                var y = a + b
+                (c + d).toString()        // 相当于 var y = a + b(c+d).toString(); 这种情况不加分号意思就被误解了
+            })
+
+            function test2 () {
+                return
+                true;                     // 被解析成 return; true;
+            }
+            console.log(test2())          // 所以这里是 undefined
+
+            function test3 () {
+                a
+                ++
+                b                         // 被解析成 a; ++b  而不是 a++; b
+            }
+        }
+    </script>
+</body>
+</html>

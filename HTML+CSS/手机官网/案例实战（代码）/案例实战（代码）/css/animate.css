@@ -1,0 +1,260 @@
+
+/* 初始状态 向下100% */
+.screen-5__subheading_animate_init,
+.screen-4__subheading_animate_init,
+.screen-3__subheading_animate_init,
+.screen-2__subheading_animate_init,
+.screen-1__shadow_animate_init,
+.screen-1__heading_animate_init{
+    opacity: 0;
+    transform: translate(0, 100%);  
+}
+.screen-5__subheading_animate_done,
+.screen-4__subheading_animate_done,
+.screen-3__subheading_animate_done,
+.screen-2__subheading_animate_done,
+.screen-1__shadow_animate_done,
+.screen-1__heading_animate_done{
+    opacity: 1;
+    transform: none;
+    transition:all 1s;
+}
+
+
+/* 初始状态 向上100% */
+.screen-5__heading_animate_init,
+.screen-4__heading_animate_init,
+.screen-3__heading_animate_init,
+.screen-2__heading_animate_init,
+.screen-1__phone_animate_init{
+    opacity: 0;
+    transform: translate(0, -100%);
+}
+.screen-5__heading_animate_done,
+.screen-4__heading_animate_done,
+.screen-3__heading_animate_done,
+.screen-2__heading_animate_done,
+.screen-1__phone_animate_done{
+    opacity: 1;
+    transform: none;
+    transition:all 1s;
+}
+
+.screen-3__phone_animate_done,
+.screen-2__phone_animate_done{
+    opacity: 1;
+    transform: none;
+    transition:all 1s .5s;
+}
+.screen-3__phone_animate_init,
+.screen-2__phone_animate_init{
+    opacity: 0;
+    transform: translate(0, 100%);
+}
+.screen-2__point_i_1_animate_init{
+    opacity: 0;
+    transform: translate(100%, 0);
+}
+.screen-2__point_animate_init{
+    opacity: 0;
+    transform: translate(-100%, 0);
+}
+.screen-2__point_i_1_animate_done{
+    opacity: 1;
+    transform: none;
+    transition:all 1s 1.5s;
+}
+.screen-2__point_i_2_animate_done{
+    opacity: 1;
+    transform: none;
+    transition:all 1s 2s;
+}
+.screen-2__point_i_3_animate_done{
+    opacity: 1;
+    transform: none;
+    transition:all 1s 2.5s;
+}
+.screen-2__point:before{
+    -webkit-animation: bounce 2s infinite ease-in-out 1s;
+}
+.screen-2__point:after{
+    -webkit-animation: bounce 2s infinite ease-in-out 0s;
+}
+
+.screen-3__features_animate_init{
+    opacity: 0;
+    transform:scale(.5);
+}
+.screen-3__features_animate_done{
+    opacity: 1;
+    transform:scale(1);
+    transition:all 1s 1.5s;
+}
+.screen-3__features-item{
+    transition:all .5s;
+    transition:all .5s;
+    cursor: pointer;
+}
+.screen-3__features-item:hover{
+    transform:scale(1.05);
+    border-color: #fff;
+    
+}
+.screen-3__features_animate_done .screen-3__features-item_i_1{
+    -webkit-animation: rock 2s infinite ease-in-out .5s;
+}
+.screen-3__features_animate_done .screen-3__features-item_i_2{
+    -webkit-animation: rock 2s infinite ease-in-out .8s;
+}
+.screen-3__features_animate_done .screen-3__features-item_i_3{
+    -webkit-animation: rock 2s infinite ease-in-out 1.3s;
+}
+.screen-3__features_animate_done .screen-3__features-item_i_4{
+    -webkit-animation: rock 2s infinite ease-in-out 1.5s;
+}
+
+
+.screen-2__point_i_1:after,
+.screen-2__point_i_1:before{
+    right: 0px;
+}
+.screen-2__point_i_3:after,
+.screen-2__point_i_3:before,
+.screen-2__point_i_2:after,
+.screen-2__point_i_2:before{
+    left: 0px;
+
+}
+.screen-2__point:after,
+.screen-2__point:before{
+    content: ' ';
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 8px;
+    background-color: rgba(255,0,0,.4);
+    border-radius: 50%;
+}
+
+.screen-4__type_animate_init{
+    opacity: 0;
+}
+.screen-4__type_animate_done{
+    opacity: 1;
+}
+
+.screen-4__type_animate_done .screen-4__type-item:hover {
+    background-color: red;
+}
+.screen-4__type_animate_init .screen-4__type-item{
+    opacity: 0;
+    transform: translate(0,100%);
+}
+
+.screen-4__type_animate_done .screen-4__type-item{
+    opacity: 1;
+    transform: none;
+}
+.screen-4__type_animate_done .screen-4__type-item_i_1 {
+    transition: all 1s .7s;
+}
+
+.screen-4__type_animate_done .screen-4__type-item_i_2 {
+    transition: all 1s .9s;
+}
+
+.screen-4__type_animate_done .screen-4__type-item_i_3 {
+    transition: all 1s 1.1s;
+}
+
+.screen-4__type_animate_done .screen-4__type-item_i_4{
+    transition: all 1s 1.3s;
+}
+
+.screen-5__back_animate_init{
+    opacity: 0;
+    transform:scale(1) translate(0,100px);
+}
+.screen-5__back_animate_done{
+    opacity: 1;
+    transform:scale(1.2) translate(0,0);
+    transition:all 1s .5s;
+}
+
+.header_status_black{
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    transition:all .5s;
+}
+.header_status_black a{
+    color: #fff;
+    transition:all .5s;
+}
+.header__nav-item-tip{
+    transition:all .5s;
+}
+.header_active_1 a.header__nav-item_i_1{
+    color: red;
+}
+.header_active_2 a.header__nav-item_i_2{
+    color: red;
+}
+.header_active_3 a.header__nav-item_i_3{
+    color: red;
+}
+.header_active_4 a.header__nav-item_i_4{
+    color: red;
+}
+.header_active_5 a.header__nav-item_i_5{
+    color: red;
+}
+.header_active_1 .header__nav-item-tip{
+    left: 20px;
+}
+.header_active_2 .header__nav-item-tip{
+    left: 120px;
+}
+.header_active_3 .header__nav-item-tip{
+    left: 220px;
+}
+.header_active_4 .header__nav-item-tip{
+    left: 320px;
+}
+.header_active_5 .header__nav-item-tip{
+    left: 420px;
+}
+.outline__item,
+.outline{
+    transition:all 1s;
+}
+
+.outline_active_1 .outline__item_i_1,
+.outline_active_2 .outline__item_i_2,
+.outline_active_3 .outline__item_i_3,
+.outline_active_4 .outline__item_i_4,
+.outline_active_5 .outline__item_i_5{
+    color: red
+}
+
+/* 帧动画定义 */
+@-webkit-keyframes bounce {
+    0%, 100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@-webkit-keyframes rock{
+    0%{ transform:rotate(0deg) }
+    10%{ transform:rotate(3deg) }
+    20%{ transform:rotate(-3deg) }
+    30%{ transform:rotate(2deg) }
+    40%{ transform:rotate(-2deg) }
+    50%{ transform:rotate(1deg) }
+    60%{ transform:rotate(-1deg) }
+    70%{ transform:rotate(0deg) }
+    100%{ transform:rotate(0deg) }
+}

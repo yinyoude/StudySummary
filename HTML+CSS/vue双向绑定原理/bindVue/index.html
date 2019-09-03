@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bindVue</title>
+</head>
+<style>
+</style>
+<body>
+    <h1>By:https://github.com/canfoo/self-vue</h1>
+    <h1 id="name">{{name}}</h1>
+</body>
+<script src="./js/observable.js"></script>
+<script src="./js/watcher.js"></script>
+<script src="./js/index.js"></script>
+<script>
+    var ele = document.querySelector('#name');
+    var selfVue = new SelfVue({
+        name: 'Hello World',
+        age: 2,
+        story: {
+            item: 'xxx'
+        }
+    }, ele, 'name');
+
+    window.setTimeout(function() {
+        console.log('name 的值改变了');
+        selfVue.data.name = 'canfoo';
+    }, 2000)
+
+    window.setTimeout(function() {
+        console.log('item 的值改变了');
+        selfVue.data.story.item = 3;
+    }, 2500)
+
+    window.setTimeout(function() {
+        console.log('age 的值改变了');
+        selfVue.data.name = 3;
+    }, 3000)
+</script>
+</html>

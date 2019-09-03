@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>类型、值、变量</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function() {
+
+            var a = '1';                // 通过声明赋值创建一个字符串，类型为 string
+            var aStr = new String(a);   // 通过包装对象创建一个字符串，类型为 object
+            console.log(a == aStr)      // true
+            console.log(a === aStr)     // false
+            console.log(a)              // "1"
+            console.log(aStr)           // "1"
+            console.log(typeof a)       // string
+            console.log(typeof aStr)    // object
+
+            var nullStr = null;
+            var undefinedStr;
+            console.log(nullStr == undefinedStr)    // true
+            console.log(nullStr === undefinedStr)   // false
+
+            var b = 'b';
+            b.len = 4;                      // 这里通过包装对象建立了一个临时对象，并且将临时对象的len值赋值为4，不过在经过了这行之后，这个临时对象就被销毁了
+            var bLen = b.len;               // 因为临时对象已经不存在了，所以这里的 b.len 是取不到值的（undefined）
+            console.log(b)                  // undefined
+
+        }
+    </script>
+</body>
+</html>

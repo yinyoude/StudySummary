@@ -1,0 +1,456 @@
+
+/* 头部模块开始 */
+.box{
+    overflow: hidden;
+}
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 2;
+    height: 60px;
+    background-color: #FAFAFA;
+    color: #292E35;
+}
+
+.header__logo {
+    float: left;
+    height: 40px;
+    margin: 10px 0px 0px 10px;
+    padding: 0px 0px 0px 50px;
+    background: url("./../img/logo.png") left top no-repeat;
+    display: block;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.header__nav {
+    float: right;
+    margin: 10px 10px 0px 0px;
+    position: relative;
+}
+
+.header__nav-item:hover {
+    color: #f03131;
+}
+
+.header__nav-item {
+    float: left;
+    padding: 0 20px;
+    font-size: 14px;
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.header__nav-item-tip {
+    width: 60px;
+    height: 2px;
+    background: red;
+    position: absolute;
+    left: 20px;
+    bottom: -2px;
+}
+
+.header__nav-item_custom_button {
+    color: #fff;
+    background: #000;
+    width: 60px;
+    margin: 0 20px;
+    border-radius: 5px;
+}
+
+.header__nav-item_custom_button:hover {
+    color: #fff;
+}
+
+/* 第一屏模块开始 */
+
+.screen-1 {
+    color: rgb(255,255,255);
+    height: 800px;
+    background-color: #ececec;
+    text-align: center;
+    background: url(../img/bg-screen-1.png) no-repeat center bottom;
+    background-size:cover;
+    position: relative;
+}
+
+.screen-1__wrap {
+    max-width: 1200px;
+    min-width: 800px;
+    margin: 0px auto;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen-1__heading {
+    position: absolute;
+    top: 160px;
+    width: 100%;
+    font-size: 42px;
+}
+
+.screen-1__heading b{
+    color: #f01414;
+    font-weight: normal;
+}
+.screen-1__phone {
+    position: absolute;
+    bottom: 180px;
+    width: 1375px;
+    height: 305px;
+    left: 50%;
+    margin-left: -687px;
+    background: url(../img/screen-1-phone.png) no-repeat center ;
+    background-size: cover;
+    z-index: 1;
+}
+.screen-1__shadow {
+    position: absolute;
+    bottom: 30px;
+    width: 1233px;
+    height: 411px;
+    left: 50%;
+    margin-left: -616px;
+    background: url(../img/screen-1-shadow.png) no-repeat center ;
+}
+/* 第二屏开始 */
+.screen-2 {
+    color: rgb(7,17,27);
+    height: 800px;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.screen-2__wrap {
+    max-width: 1200px;
+    min-width: 800px;
+    margin: 0px auto;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen-2__heading {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    font-size: 42px;
+    color: #f01414
+}
+
+.screen-2__subheading {
+    width: 100%;
+    top: 190px;
+    position: absolute;
+    font-size: 16px;
+}
+.screen-2__phone{
+    width: 800px;
+    height: 873px;
+    background: url(../img/bg-screen-2.png) no-repeat;
+    position: absolute;
+    left: 50%;
+    margin-left: -464px;
+    top: 270px;
+}
+.screen-2__point{
+    font-size: 24px;
+    color: #4D555d;
+    position: absolute;
+    width: 100px;
+}
+.screen-2__point_i_1{
+    top: 180px;
+    left: -120px;
+    padding-right: 112px;
+    background: url(../img/icon-point-right.png) no-repeat center right;
+}
+.screen-2__point_i_2{
+    top: 37px;
+    left: 584px;
+
+    padding-left: 112px;
+    background: url(../img/icon-point-left.png) no-repeat center left;
+}
+.screen-2__point_i_3{
+    top: 340px;
+    left: 680px;
+
+    padding-left: 112px;
+    background: url(../img/icon-point-left.png) no-repeat center left;
+}
+
+/* 第三屏开始 */
+
+.screen-3 {
+    color: rgb(255,255,255);
+    height: 800px;
+    background-color: #a71316;
+}
+
+.screen-3__wrap {
+    max-width: 1200px;
+    min-width: 800px;
+    margin: 0px auto;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen-3__heading {
+    position: absolute;
+    top: 90px;
+    left: 10px;
+    width: 580px;
+    font-size: 36px;
+}
+.screen-3__subheading {
+    position: absolute;
+    top: 170px;
+    left: 10px;
+    width: 580px;
+    font-size: 16px;
+}
+
+.screen-3__phone{
+    width: 729px;
+    height: 900px;
+    position: absolute;
+    top: 200px;
+    left: 465px;
+    background: url(../img/bg-screen-3.png) no-repeat;
+}
+
+.screen-3__features {
+    position: absolute;
+    width: 328px;
+    height: 288px;
+    bottom: 140px;
+    left: 5px;
+}
+.screen-3__features-item-number{
+    height: 36px;
+    font-size: 36px;
+    line-height: 36px;
+    padding: 32px 0 9px 0;
+    display: block;
+}
+.screen-3__features-item {
+    float: left;
+    width: 138px;
+    height: 118px;
+    border: 1px solid #D97173;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 14px;
+    font-size: 14px;
+    margin: 0 24px 24px 0;
+    color: #fff;
+}
+
+
+/* 第四屏开始 */
+.screen-4{
+    background-color: #fff;
+    text-align: center;
+    height: 800px;
+}
+.screen-4__wrap {
+    max-width: 1200px;
+    min-width: 800px;
+    margin: 0px auto;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen-4__heading {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    font-size: 42px;
+    color: #f01414;
+}
+.screen-4__subheading {
+    position: absolute;
+    top: 180px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.screen-4__type {
+    width: 1300px;
+    margin-left: 30px;
+    height: 270px;
+    bottom:220px;
+    position: absolute;
+    font-size: 16px;
+    text-align: center;
+}
+
+.screen-4__type-item {
+    width: 220px;
+    height: 270px;
+    float: left;
+    margin-right: 90px;
+    position: relative;
+}
+.screen-4__type-item-name{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 300px;
+    font-size: 16px;
+    height: 16px;
+    line-height: 16px;
+    color: #2c3238;
+}
+.screen-4__type-item-storage{
+
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 328px;
+    font-size: 9px;
+    height: 9px;
+    line-height: 9px;
+    color: #93999f;
+}
+
+.screen-4__type .photo{
+    width: 240px;
+    height: 270px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+    .screen-4__type-item_i_1 {
+        background: url("../img/phone-1.png") center left no-repeat;
+    }
+
+    .screen-4__type-item_i_2 {
+        background: url("../img/phone-2.png") center left no-repeat;
+    }
+
+    .screen-4__type-item_i_3 {
+        background: url("../img/phone-3.png") center left no-repeat;
+    }
+
+    .screen-4__type-item_i_4 {
+        background: url("../img/phone-4.png") center left no-repeat;
+    }
+
+/* 第五屏开始 */
+.screen-5 {
+    height: 800px;
+    text-align: center;
+    overflow: hidden;
+    background: #d9dde1;
+    position: relative; 
+}
+.screen-5__back{
+    width: 100%;
+    height: 370px;
+    background: url(../img/bg-screen-5.png) no-repeat bottom center ;
+    background-size: cover;
+    position: absolute;
+    bottom: -100px;
+}
+
+.screen-5__wrap {
+    max-width: 1200px;
+    min-width: 800px;
+    margin: 0px auto;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen-5__heading {
+    position: absolute;
+    top: 180px;
+    width: 100%;
+    font-size: 42px;
+    color: #f01414;
+}
+.screen-5__subheading {
+    position: absolute;
+    top: 270px;
+    width: 100%;
+    font-size: 16px;
+}
+
+
+.buy {
+    height: 80px;
+    padding: 120px 0px;
+    background: url(../img/bg-screen-buy.png) no-repeat bottom center #2b333b;
+}
+
+.buy__button:hover,
+.buy__button {
+    width: 240px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    border-radius: 3px;
+    margin: 0px auto;
+    display: block;
+    background-color: #f01414;
+    transition:all .5s;
+}
+.buy__button:hover{
+    box-shadow: 0 10px 10px rgba(0,0,0,.5);
+    transform:translate(0,-5px);
+}
+
+/*页脚模块开始*/
+.footer {
+    height: 80px;
+    line-height: 80px;
+    background-color: #07111b;
+    text-align: center;
+    color: #fff;
+}
+
+
+/*大纲模块*/
+
+.outline {
+    position: fixed;
+    padding: 5px 10px;
+    bottom: 120px;
+    right: 0;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0px 4px 12px 0px rgba(7, 17, 27, 0.1);
+}
+
+.outline__item {
+    display: block;
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 0;
+    background: rgb(255,255,255);
+    margin: 5px 0px 0px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #93999f;
+}
+.outline__item:first-child{
+    border:none;
+}
+.outline__item_status_active{
+    color: #000;
+}
+
+
