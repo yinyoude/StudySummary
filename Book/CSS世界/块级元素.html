@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>块级元素</title>
+    <style>
+        .imgExample {
+            padding: 10px;
+            background-color: #cd0000;
+        }
+
+        .imgExample>img {
+            /* 浮动会使元素脱离文档流，但是和position的脱离不同，对于position，其他盒子不会为其让出位置，而对float的盒子会让出位置 */
+            float: left;
+        }
+
+        .clear:after {
+            content: "";
+            /* block或者table能实现效果，一般不适用list-item，因为ie不支持伪元素的list-item */
+            display: block;
+            /* 清除浮动 */
+            clear: both;
+        }
+
+        .myExample>p {
+            float: left;
+        }
+
+        .myExample>p:last-child:after {
+            content: "伪元素";
+            display: inline;
+            clear: both;
+        }
+
+        .inline-table {
+            display: inline-table;
+            width: 128px;
+            margin-left: 10px;
+            border: 1px solid #cad5eb;
+        }
+
+        .inline-table>p {
+            display: table-cell;
+        }
+
+        table {
+            width: 170px;
+            text-align: left;
+            background: #a0b3d6;
+            font-size: 12px;
+            border-spacing: 1px;
+        }
+
+        table tbody {
+            display: table-row-group;
+            vertical-align: middle;
+        }
+
+        table tbody tr {
+            display: table-row;
+        }
+
+        table tbody tr td {
+            padding: 2px 4px;
+            border: 3px solid #fff;
+            background: #f9f9f9;
+        }
+
+        .father {
+            width: 150px;
+            padding: 10px;
+            background-color: #cd0000;
+            white-space: nowrap;
+        }
+
+        .child {
+            display: inline-block;
+            padding: 5px;
+            background-color: #f0f3f9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imgExample clear">
+        <h2>块级元素</h2>
+        <img src="https://avatar-static.segmentfault.com/122/216/1222163650-1030000000687782_big64">
+    </div>
+    <hr>
+    <div class="myExample clear">
+        <h2>测试</h2>
+        <p>A浮动块 |</p>
+        <p>B浮动块 |</p>
+        <p>C浮动块 |</p>
+    </div>
+    <hr>
+    <div class="clear">
+        <!-- 每个元素都有两个盒子，外在盒子和容器盒子（‘内在盒子’）。外在盒子负责元素是可以一行显示，还是只能换行显示；容器盒子负责宽高、内容呈现什么的。 -->
+        <h2>display:inline-table组成</h2>
+        和文字平起平坐的表格：
+        <div class="inline-table">
+            <p>第1列</p>
+            <p>第2列</p>
+        </div>
+    </div>
+    <hr>
+    <div class="clear">
+        <h2>width/height作用的具体细节</h2>
+        <table>
+            <tr>
+                <!-- 中文能断就断，但英文不可以，只有第一列是纯中文，所以出现一柱擎天的情况，如果第一列有英文单词的话，这个现象就消失了 -->
+                <td>就1列就1列就1列就1列就1列</td>
+                <td>当父级relative，且宽度很小的时候，例如...</td>
+                <td>当父级relative，且宽度很小的时候，例如...</td>
+            </tr>
+        </table>
+        <br>
+        <div class="father">
+            <span class="child">恰如一江春水向东流，流到断崖也不回头</span>
+        </div>
+    </div>
+</body>
+
+</html>
