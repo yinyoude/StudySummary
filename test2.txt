@@ -1,7 +1,2 @@
 #aaaaaa
 #bbbbbb
-#cccccc
-#dddddd
-#ffffff
-#gggggg
-#hhhhhh
