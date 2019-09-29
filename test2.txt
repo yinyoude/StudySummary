@@ -1,2 +1,11 @@
 #aaaaaa
+<<<<<<< HEAD
 #bbbbbb
+=======
+#bbbbbb
+#cccccc
+#dddddd
+#kkkkkk
+#gggggg
+#hhhhhh
+>>>>>>> master

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>table的宽度</title>
+    <style>
+        table {
+            width: 170px;
+            text-align: left;
+            background: #a0b3d6;
+            font-size: 12px;
+            border-spacing: 1px;
+        }
+
+        table tbody {
+            display: table-row-group;
+            vertical-align: middle;
+        }
+
+        table tbody tr {
+            display: table-row;
+        }
+
+        table tbody tr td {
+            padding: 2px 4px;
+            border: 3px solid #fff;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clear">
+        <h2>width/height作用的具体细节</h2>
+        <table>
+            <tr>
+                <!-- 中文能断就断，但英文不可以，只有第一列是纯中文，所以出现一柱擎天的情况，如果第一列有英文单词的话，这个现象就消失了 -->
+                <!-- 注意，table的宽度最终是受内容影响的，如果内容的很长（比如说有一个很长的英文单词，超过了这个例子的170px）,table的最终宽度就以内容宽度为准 -->
+                <td>就1列就1列就1列就1列就1列</td>
+                <td>当父级relative，且宽度很小的时候，例如...</td>
+                <td>当父级relative，且宽度很小的时候，例如...</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

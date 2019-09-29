@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>内部尺寸与流体特性</title>
+    <style>
+        .box {
+            padding: 10px;
+            background-color: #cd0000;
+            text-align: center;                 /* text-align对行内元素无效 */
+            width: 300px;
+        }
+        .content {
+            display: inline-block;
+            text-align: left;
+        }
+        /* ------------------美丽的分割线（首选最小宽度）--------------- */
+        .ao,.tu{
+            display: inline-block;
+            width: 0;
+            font-size: 14px;
+            line-height: 18px;
+            margin: 35px;
+            color: #fff;
+        }
+        .ao:before,
+        .tu:before {
+            outline: 2px solid #cd0000;
+            font-family: Consolas, Monaco, monospace;
+        }
+        .ao:before {
+            content: "love你love"
+        }
+        .tu {
+            direction: rtl;
+        }
+        .tu:before {
+            content: "我love你"
+        }
+        /* -------------------美丽的分割线（最大宽度）--------------------- */
+        .wrap {
+            width: 300px;
+            height: 293px;
+            position: relative;
+            overflow: hidden;
+        }
+        .wrap > ul {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            white-space: nowrap;
+        }
+        .wrap li {
+            display: inline-block;
+        }
+    </style> 
+</head>
+<body>
+    <!-- 包裹性 -->
+    <!-- 首先有这样一个需求：页面的某个模块的文字内容是动态的，可能是几个字，也可能是一句话。然后，希望文字少的时候居中显示，文字超过一行的话居左显示 -->
+    <div class="box">
+        <p id="conMore" class="content">文字内容</p>
+    </div>
+    <!-- 按钮 -->
+    <p><button id="btnMore">更多文字</button></p>
+
+    <hr/>
+    <h4>首选最小宽度</h4>
+    <!-- 首选最小宽度 -->
+    <span class="ao"></span>
+    <span class="tu"></span>
+
+    <hr>
+    <h4>最大宽度</h4>
+    <div id="wrap" class="wrap">
+        <ul>
+            <li><img src="./img/最大宽度.png"></li>
+            <li><img src="./img/最大宽度.png"></li>
+            <li><img src="./img/最大宽度.png"></li>
+            <li><img src="./img/最大宽度.png"></li>
+            <li><img src="./img/最大宽度.png"></li>
+        </ul>
+    </div>
+</body>
+<script src="./js/iscroll.js"></script>
+<script>
+    var btn = document.getElementById('btnMore');
+    var content = document.getElementById("conMore");
+    if(btn && content) {
+        btn.onclick = function() {
+            content.innerHTML += '-新增文字'
+        }
+    }
+
+    new IScroll('#wrap', {
+        scrollbars: true,
+        scrollX: true,
+        scrollY: false
+    });
+</script>
+ 

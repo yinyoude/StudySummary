@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>伪元素清除浮动</title>
+    <style>
+        .imgExample {
+            padding: 10px;
+            background-color: #cd0000;
+        }
+
+        .imgExample>img {
+            /* 浮动会使元素脱离文档流，但是和position的脱离不同，对于position，其他盒子不会为其让出位置，而对float的盒子会让出位置 */
+            float: left;
+        }
+
+        .clear:after {
+            content: "";
+            /* block或者table能实现效果，一般不适用list-item，因为ie不支持伪元素的list-item */
+            display: block;
+            /* 清除浮动 */
+            clear: both;
+        }
+
+        /* ---------------美丽的分割线------------- */
+        .myExample>p {
+            float: left;
+        }
+
+        .myExample>p:last-child:after {
+            content: "伪元素";
+            display: inline;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imgExample clear">
+        <h2>块级元素</h2>
+        <img src="https://avatar-static.segmentfault.com/122/216/1222163650-1030000000687782_big64">
+    </div>
+    <hr>
+    <div class="myExample clear">
+        <h2>测试</h2>
+        <p>A浮动块 |</p>
+        <p>B浮动块 |</p>
+        <p>C浮动块 |</p>
+    </div>
+</body>
+
+</html>
