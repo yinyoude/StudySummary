@@ -18,13 +18,22 @@
             console.log(typeof a)       // string
             console.log(typeof aStr)    // object
 
+            /* 精度错误 */
+            var x = .3 - .2;
+            var y = .2 - .1;
+            console.log(x === y);       // false    在javaScript的实际运行环境中， .3 - .2 = 0.099 999 999 999 999 98
+
             var nullStr = null;
             var undefinedStr;
             console.log(nullStr == undefinedStr)    // true
             console.log(nullStr === undefinedStr)   // false
 
+            /* 
+             * 字符串是基本数据类型，但是为什么会有subString()、indexOf()、length这些属性和方法？ 
+             * 因为js在使用这些字符串方法的时候会实例化一个包装类对象，在这些方法使用完之后，这个包装类对象就会被销毁。（可以这么理解吧）
+             */
             var b = 'b';
-            b.len = 4;                      // 这里通过包装对象建立了一个临时对象，并且将临时对象的len值赋值为4，不过在经过了这行之后，这个临时对象就被销毁了
+            b.len = 4;                      // 字符串本来是没有len属性的，这里通过包装对象建立了一个临时对象，并且将临时对象的len值赋值为4，不过在经过了这行之后，这个临时对象就被销毁了
             var bLen = b.len;               // 因为临时对象已经不存在了，所以这里的 b.len 是取不到值的（undefined）
             console.log(b)                  // undefined
 

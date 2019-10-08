@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>高度100%无效</title>
+    <style>
+        /* 要都设置了html和body的高度100%,子元素的100%才能达到满屏的效果 */
+        /* html,body {
+            height: 100%;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+        } */
+        .box {
+            display: inline-block;
+            white-space: nowrap;
+            background-color: #cd0000;
+        }
+
+        .text {
+            display: inline-block;
+            width: 100%;
+            background-color: #34538b;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./img/example.png">
+        <span class="text">红色背景是父级</span>
+    </div>
+</body>
+
+</html>
