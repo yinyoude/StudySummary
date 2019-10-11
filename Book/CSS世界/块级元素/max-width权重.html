@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>max-width权重</title>
+    <style>
+        img {
+            max-width: 180px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- auto 是关键字，而不是具体的数值，所以想通过 auto 来形成动画效果是实现不了的。 -->
+    <!-- min-width 的默认值是 auto， max-width 的默认值是 none -->
+    <!-- 当width比max-width大的时候，就算width有 !important 修饰，最终还是 max-width 为主，但如果 min-width 比 max-width 大的时候，最终以 min-width 为主 -->
+    <img src="../img/example.png" style="width: 480px!important">
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>利用伪元素的content呈现图片的alt</title>
+    <style>
+        img {
+            display: inline-block;
+            width: 256px;
+            height: 192px;
+            color: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        img::before {
+            /* 淡蓝色占位背景 */
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f3f9;
+            visibility: visible;
+        }
+        img::after {
+            /* 黑色 alt 信息条 */
+            content: attr(alt);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            line-height: 30px;
+            background-color: rgba(0, 0, 0, .5);
+            color: white;
+            font-size: 14px;
+            transform: translateY(100%);
+            /* 来点动画效果 */
+            transition: transform .2s;
+            visibility: visible;
+        }
+        img:hover::after {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <img alt="呆萌的魔法师" data-src="../img/example.png">
+    <p><button>设置src属性显示图片</button></p>
+</body>
+<script>
+    var eleButton = document.querySelector('button');
+    var eleImg = document.querySelector('img');
+
+    if(eleButton && eleImg) {
+        var initValueButton = eleButton.innerHTML;
+        // 图片地址
+        var srcImg = eleImg.getAttribute('data-src');
+        // 移除该属性
+        eleImg.removeAttribute('data-src');
+        // 按钮点击事件
+        eleButton.addEventListener('click', function() {
+            if(this.innerHTML === initValueButton) {
+                this.innerHTML = '移除src属性';
+                // 图片显示
+                eleImg.setAttribute('src', srcImg);
+            } else {
+                this.innerHTML = initValueButton;
+                // src属性移除
+                eleImg.removeAttribute('src');
+            }
+        });
+    }
+</script>
+
+</html>

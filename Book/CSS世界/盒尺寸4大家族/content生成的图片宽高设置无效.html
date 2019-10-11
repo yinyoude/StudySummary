@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>content生成的图片宽高设置无效</title>
+    <style>
+        /* 这里设置的width和height失效了，因为图片中的content替换内容默认的适配方案是填充，也就是外部设定的尺寸多大，就填满跟着多大。如果想修改的话可以使用 background 的方式 */
+        div::after {
+            content: url(../img/example.png);
+            display: block;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

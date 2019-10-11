@@ -6,10 +6,34 @@
     <meta name="viewport" content="width=device-width">
     <title>图片切换布局</title>
     <style>
+        .box {
+            display: inline-block;
+            position: relative;
+        }
+        .prev,.next {
+            width: 50%;
+            height: 100%;
+            top: 0;
+            opacity: .5;
+            position: absolute;
+        }
+        .prev {
+            left: 0;
+            background-color: #cd0000;
+        }
+        .next {
+            right: 0;
+            background-color: #34538b;
+        }
     </style>
 </head>
 
 <body>
+    <div class="box">
+        <a href="javascript:" class="prev" title="上一张">上一张</a>
+        <a href="javascript:" class="next" title="下一张">下一张</a>
+        <img src="../img/example.png">
+    </div>
 </body>
 
 </html>
