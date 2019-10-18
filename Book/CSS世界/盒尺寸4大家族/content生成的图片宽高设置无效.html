@@ -7,17 +7,26 @@
     <title>content生成的图片宽高设置无效</title>
     <style>
         /* 这里设置的width和height失效了，因为图片中的content替换内容默认的适配方案是填充，也就是外部设定的尺寸多大，就填满跟着多大。如果想修改的话可以使用 background 的方式 */
+        /* 虽然对content不起效，但是width和height还是对after元素起效果的 */
         div::after {
             content: url(../img/example.png);
             display: block;
+            /* overflow: hidden; */
             width: 200px;
             height: 200px;
+        }
+        p::before {
+            content: "before";
+        }
+        p::after {
+            content: "after";
         }
     </style>
 </head>
 
 <body>
     <div></div>
+    <p>pppppp</p>
 </body>
 
 </html>
