@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>内联元素的padding</title>
+    <style>
+        header,footer {
+            height: 100px;
+            background-color: grey;
+            width: 300px;
+        }
+        section {
+            width: 300px;
+            overflow: auto;
+        }
+        span {
+            padding: 50px;
+            background-color: red;
+        }
+
+        a + a:before {
+            content: "";
+            font-size: 0;
+            padding: 10px 3px 1px;
+            margin-left: 6px;
+            border-left: 1px solid gray;
+        }
+
+        button {
+            position: absolute;
+            clip: rect(0 0 0 0);
+        }
+        label {
+            display: inline-block;
+            line-height: 20px;
+            padding: 10px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <section>
+        <!-- padding作用于padding-box，设置了padding后span的高度变高了，当时缺不影响布局，应为行内元素的行高是受 line-height、font-size 这些属性影响的 -->
+        <span>链接</span>
+    </section>
+    <footer></footer>
+    <h1></h1>
+    <div>
+        <!-- 利用内联元素实现高度可控的分隔线 -->
+        <a href="">登录</a><a href="">注册</a>
+    </div>
+    <h1></h1>
+    <div>
+        <!-- 使用button同时保证他的padding在不同浏览器表现一致 -->
+        <button id="btn"></button>
+        <label for="btn">按钮</label>
+    </div>
+</body>
+
+</html>
