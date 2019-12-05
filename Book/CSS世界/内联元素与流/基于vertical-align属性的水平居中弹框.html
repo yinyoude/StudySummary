@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style type="text/css">
+  	html, body {
+  		height: 100%;
+  		margin: 0;
+  		padding: 0;
+  	}
+  	.container {
+	    position: fixed;
+	    top: 0; right: 0; bottom: 0; left: 0;
+	    /* for IE8 */
+	    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);
+	    /* for IE9+ */
+	    background: rgba(0,0,0,.5), none;
+	    text-align: center;
+	    white-space: nowrap;
+	    z-index: 99;
+	}
+	
+	.dialog {
+	    display: inline-block;
+	    vertical-align: middle;
+	    border-radius: 6px;
+	    background-color: #fff;
+	    text-align: left;
+	    white-space: normal;
+	}
+	.content {
+	    width: 240px;
+	    height: 120px;
+	    padding: 20px;
+	}
+	.test {
+		display: inline-block;
+	    vertical-align: middle;
+		height: 100%;
+		width: 0px;
+	}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="dialog">
+        <div class="content">内容占位</div>
+    </div>
+    <div class="test"></div>
+</div>
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style type="text/css">
+  	html, body {
+  		height: 100%;
+  		margin: 0;
+  		padding: 0;
+  	}
+  	.container {
+	    position: fixed;
+	    top: 0; right: 0; bottom: 0; left: 0;
+	    /* for IE8 */
+	    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);
+	    /* for IE9+ */
+	    background: rgba(0,0,0,.5), none;
+	    text-align: center;
+	    white-space: nowrap;
+	    z-index: 99;
+	}
+
+    /* 
+    此处使用伪元素的目的是为了创建一个与父元素（屏幕）等高的内联盒元素，有点像模仿了一个幽灵空白节点，当然也可以不用伪元素，像本例就使用了一个内容为空的test块，
+    再使用vertical-align:middle，使得伪元素居中， 
+    然后设置dialog块的vertical-align:middle，就能让伪元素影响到dialog也垂直居中了。
+    .container::after {
+	    content: "";
+	    display: inline-block;
+	    height: 100%;
+	    vertical-align: middle;
+	    background: red;
+	} */
+	
+	.dialog {
+	    display: inline-block;
+	    vertical-align: middle;
+	    border-radius: 6px;
+	    background-color: #fff;
+	    text-align: left;
+	    white-space: normal;
+	}
+	.content {
+	    width: 240px;
+	    height: 120px;
+	    padding: 20px;
+	}
+	.test {
+		display: inline-block;
+	    vertical-align: middle;
+		height: 100%;
+		width: 0px;
+	}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="dialog">
+        <div class="content">内容占位</div>
+    </div>
+    <div class="test"></div>
+</div>
+</body>
+</html>
